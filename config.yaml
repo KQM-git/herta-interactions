@@ -88,11 +88,6 @@ modules:
 
           *For full coverage terms please read our [Terms of Service](https://www.youtube.com/watch?v=dQw4w9WgXcQ)*
 
-        # Who can get these roles
-        permissions:
-          whitelist:
-            - "${ ROLES.VERIFIED }"
-
         reactions:
           # REACTION EMOJI ID: ROLE
           "pe:946999484175491102":
