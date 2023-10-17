@@ -1,3 +1,0 @@
-match: ${ TRIGGER_PREFIX }(?:[cC]irce)(?:\s|$)
-interaction: 
-  content: you have 24 hours to become normal

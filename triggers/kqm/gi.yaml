@@ -1,0 +1,4 @@
+match: ${ TRIGGER_PREFIX }(genshin( impact)?|gi)(?:\s|$)
+ignoreCase: true
+interaction: 
+  content: https://discord.gg/keqing

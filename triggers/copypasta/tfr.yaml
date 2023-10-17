@@ -1,5 +1,0 @@
-match: ${ TRIGGER_PREFIX }[Tt][Ff][Rr](?:\s|$)
-interaction:
-  content: |-
-    <https://keqingmains.com/beidou/>
-    <https://keqingmains.com/dehya/>

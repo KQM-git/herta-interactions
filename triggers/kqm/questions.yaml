@@ -1,4 +1,0 @@
-interaction: miscellaneous/questions
-description: "Have Questions? We have Answers!"
-
-match: ${ TRIGGER_PREFIX }([qQ]uestions|[qQ]uestion)(?:\s|$)

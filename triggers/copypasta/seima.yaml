@@ -1,3 +1,0 @@
-match: ${ TRIGGER_PREFIX }(?:[sS]eima)(?:\s|$)
-interaction:
-  content: https://cdn.discordapp.com/emojis/1001998362146525244.gif?size=160&quality=lossless

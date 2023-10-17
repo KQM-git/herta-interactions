@@ -1,3 +1,0 @@
-match: ${ TRIGGER_PREFIX }(?:[lL]it)(?:\s|$)
-interaction: 
-  content: "<@245287312244736002>"

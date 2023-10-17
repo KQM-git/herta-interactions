@@ -1,3 +1,0 @@
-interaction: affiliates/dg
-description: Data Gathering Server Discord Invite
-match: ${ TRIGGER_PREFIX }(?:dg|data\s?gathering)(?:\s|$)

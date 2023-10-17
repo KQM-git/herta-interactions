@@ -1,3 +1,0 @@
-match: ${ TRIGGER_PREFIX }(?:[pP]kach)(?:\s|$)
-interaction: 
-  content: https://cdn.discordapp.com/emojis/828397030720012288.webp?size=64

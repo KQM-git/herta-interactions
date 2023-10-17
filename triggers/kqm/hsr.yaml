@@ -1,4 +1,0 @@
-match: ${ TRIGGER_PREFIX }(hsr|honkai star rail)(?:\s|$)
-ignoreCase: true
-interaction: 
-  content: https://discord.gg/kqmstarrail

@@ -1,20 +1,17 @@
 # override permissions for any command
 permissions:
   liveinteraction:
-    whitelist: ${ [ ROLES.PILLAR_STAFF, ...getValuesRecursive(ROLES.ADMIN) ] }
+    whitelist: ${ [ ROLES.STAFF, ...getValuesRecursive(ROLES.ADMIN) ] }
 
   livecommand:
-    whitelist: ${ [ ROLES.PILLAR_STAFF, ...getValuesRecursive(ROLES.ADMIN) ] }
+    whitelist: ${ [ ROLES.STAFF, ...getValuesRecursive(ROLES.ADMIN) ] }
 #   # Its possible to set permissions for internal commands too.
 
   role:
     whitelist: >-
       ${ [ 
         ...getValuesRecursive(ROLES.ADMIN), 
-        ...getValuesRecursive(ROLES.EMISSARY), 
-        ROLES.PILLAR_HEAD, 
-        ROLES.PILLAR_VICE_HEAD, 
-        ROLES.TRADE_HEAD 
+        ROLES.TEAM_LEAD, 
       ] }
 
   serverinfo:
@@ -25,16 +22,14 @@ permissions:
     whitelist: >-
       ${ [ 
           ...getValuesRecursive(ROLES.ADMIN), 
-          ROLES.PILLAR_HEAD, 
-          ROLES.PILLAR_VICE_HEAD 
+          ROLES.TEAM_LEAD
         ] }
 
   points/list:
     whitelist: >-
       ${ [ 
           ...getValuesRecursive(ROLES.ADMIN), 
-          ROLES.PILLAR_HEAD, 
-          ROLES.PILLAR_VICE_HEAD 
+          ROLES.TEAM_LEAD
         ] }
 
   points/clean: 
@@ -47,9 +42,7 @@ permissions:
     whitelist: >-
       ${ [ 
         ...getValuesRecursive(ROLES.ADMIN), 
-        ROLES.PILLAR_STAFF, 
-        ROLES.THE_TRADES,
-        ROLES.STAFF.GUHUA_GUIDE 
+        ROLES.STAFF, 
       ] }
 #
 #   # Its possible to set permissions for custom commands
@@ -75,8 +68,8 @@ modules:
         
     loggingChannel: "${ CHANNELS.BOT_LOGGING }"
     
-  vanityRoles:
-    enabled: true
+   vanityRoles:
+    enabled: false
 
     # Who can use the /vanityrole command, anyone with MANAGE_ROLES if not set.
     permissions:
@@ -90,11 +83,11 @@ modules:
     createRoleAfter: "${ ROLES.PATREON_ADEPTUS }"
 
   reactRoles:
-    enabled: true
+    enabled: false
 
     # Who can use the /reactroles command, anyone with MANAGE_ROLES if not set.
     permissions:
-      whitelist: ${ [ ...getValuesRecursive(ROLES.ADMIN), ...getValuesRecursive(ROLES.EMISSARY) ] }
+      whitelist: ${ [ ...getValuesRecursive(ROLES.ADMIN), ...getValuesRecursive(ROLES.TEAM_LEAD) ] }
 
     configs:
       # randomRole:
@@ -122,357 +115,27 @@ modules:
       #         }
       #       description: "Random Role"
 
-      keqkey:
-        title: "Keqing's Key"
-        color: ${ COLORS.ELECTRO_PURPLE }
-        description:
-        permissions:
-          whitelist: >- 
-            ${ [ 
-              ...getValuesRecursive(ROLES.ADMIN), 
-              ROLES.EMISSARY, 
-              ROLES.HEAD_MILLELITH, 
-              ROLES.HONORARY_QIXING,
-              ROLES.VICE_HEAD_MILLELITH 
-            ] }
+      # keqkey:
+      #   title: "Keqing's Key"
+      #   color: ${ COLORS.ELECTRO_PURPLE }
+      #   description:
+      #   permissions:
+      #     whitelist: >- 
+      #       ${ [ 
+      #         ...getValuesRecursive(ROLES.ADMIN), 
+      #         ROLES.EMISSARY, 
+      #         ROLES.HEAD_MILLELITH, 
+      #         ROLES.HONORARY_QIXING,
+      #         ROLES.VICE_HEAD_MILLELITH 
+      #       ] }
 
-        reactions:
-          "love:767201369525321758":
-            role: "${ ROLES.ADMIN.KEQINGS_KEY }"
-            description: ":key: Break glass in case of emergency."
-
-      main:
-        image: "https://cdn.discordapp.com/attachments/810941835949244447/811264667867414558/unknown.png"
-        title: "Would you be interested in extended car insurance?"
-        description: |-
-          It would benefit you in the long term if you opted-in for out Extended Car Insurance:tm:. We cover everything from your car being blown up by the local gang to Russian troops commandeering your vehicle.
-
-          *For full coverage terms please read our [Terms of Service](https://www.youtube.com/watch?v=dQw4w9WgXcQ)*
-
-        # Who can get these roles
-        permissions:
-          whitelist:
-            - "${ ROLES.VERIFIED }"
-
-        reactions:
-          # REACTION EMOJI ID: ROLE
-          "pe:946999484175491102":
-            role: "945554661413367819"
-            description: "Yes"
-
-          "based:945928754973270067":
-            role: "945554661413367819"
-            description: "Absolutely"
-
-      # TC Readme Reacts
-      theoryreadme:
-        image: "https://cdn.discordapp.com/attachments/763589418086432778/813379829151301642/GI_-_KQM_2.png"
-        title: "Theorycrafting Section Roles"
-        color: ${ COLORS.ELECTRO_PURPLE }
-        description: |-
-          React with the matching emoji for specific roles
-        permissions:
-          whitelist:
-            - "${ ROLES.VERIFIED }"
-
-        reactions:
-          # REACTION EMOJI ID: ROLE
-          "KeqingThink:1027399545430212671":
-            role: "${ ROLES.THEORYCRAFTER }"
-            description: "<@&${ ROLES.THEORYCRAFTER }>: Access to the TC Section"
-
-          "keqnote:838482574644346931":
-            role: "${ ROLES.LIBRARY_SUBMISSIONS }"
-            description: "<@&${ ROLES.LIBRARY_SUBMISSIONS }>: Access to the TC Tickets"
-
-          "keqingPain:854599966432559154":
-            role: "${ ROLES.GUIDE_SUBMISSIONS }"
-            description: "<@&${ ROLES.GUIDE_SUBMISSIONS }>: Access to Guide Tickets"
-
-          "KeqSalute:1021891784713969715":
-            role: "${ ROLES.THEORYHUNTER }"
-            description: "<@&${ ROLES.THEORYHUNTER }>: Be notified when a theoryhunt is posted"
-
-          "madamePING:776287232579207198":
-            role: "${ ROLES.TC_PING }"
-            description: "<@&${ ROLES.TC_PING }>: Be notified about important TC announcements"
-
-      theoryreadme2:
-        title: "Guide & Calc Verification"
-        color: ${ COLORS.ELECTRO_PURPLE }
-        description: |-
-          React to be pinged for Guide or Calc Verifications (available to TC Staff & <@&${ ROLES.WANGSHENG_THEORYCRAFTER }>).
-
-          *You will be pinged in Guide Tickets when they are ready to be verified.*
-        permissions:
-          whitelist: >- 
-            ${ [ 
-              ...getValuesRecursive(ROLES.ADMIN), 
-              ROLES.WANGSHENG_THEORYCRAFTER, 
-              ROLES.STAFF.TC_STAFF,
-              ROLES.STAFF.WANGSHENG_EDITOR, 
-              ROLES.STAFF.WANGSHENG_SCHOLAR, 
-              ROLES.STAFF.WANGSHENG_MONKE,
-              ROLES.STAFF.WFP_TC_STAFF,
-              ROLES.STAFF.WANGSHENG_ASST_EDITOR,
-              ROLES.WANGSHENG_DIRECTOR, 
-              ROLES.WANGSHENG_ASST_DIRECTOR
-            ] }
-        reactions:
-
-          "keqisee:776297817438289920":
-            role: "${ ROLES.GUIDE_VERIFICATION }"
-            description: "<@&${ ROLES.GUIDE_VERIFICATION }>: Gives you the Guide Verification Role"   
-    
-          "KeqingSparkle:779046540408127521":
-            role: "${ ROLES.CALC_VERIFICATION }"
-            description: "<@&${ ROLES.CALC_VERIFICATION }>: Gives you the Calc Verification Role"     
-
-      guidesubmissionreactrole:
-        title: "Guide Submissions React Role"
-        color: ${ COLORS.ELECTRO_PURPLE }
-        description: |-
-          Optional react role to see guide tickets. If you are interested in guide work, you will find tickets for ongoing guide projects. 
-
-        permissions:
-          whitelist:
-            - "${ ROLES.VERIFIED }"
-
-        reactions:
-          # REACTION EMOJI ID: ROLE
-
-          "keqingflower:1049870812796178442":
-            role: "${ ROLES.GUIDE_SUBMISSIONS }"
-            description: "<@&${ ROLES.GUIDE_SUBMISSIONS }>: Gives you the Guide Verification Role which provides access to Guide Channels."  
-         
-      # Offtopic React Role
-      offtopicreactrole:
-        title: "Get access to the Offtopic part of KQM"
-        color: ${ COLORS.ELECTRO_PURPLE }
-        description: |-
-          React with the matching emoji for specific roles
-        permissions:
-          whitelist:
-            - "${ ROLES.VERIFIED }"
-
-        reactions:
-          # REACTION EMOJI ID: ROLE
-          "morapls:770223616112853024":
-            role: "${ ROLES.OFFTOPIC }"
-            description: "<@&${ ROLES.OFFTOPIC }>: Access to all of Offtopic"
-
-      # Feiyun React Role
-      feiyunreact:
-        title: "Feiyun React Roles"
-        color: ${ COLORS.ELECTRO_PURPLE }
-        description: |-
-          React with the matching emoji for specific roles
-        permissions:
-          whitelist:
-            - "${ ROLES.STAFF.FEIYUN_FILM_CREW }"
-
-        reactions:
-          # REACTION EMOJI ID: ROLE
-          "🎞️":
-            role: "${ ROLES.STAFF.FEIYUN_FILM_VIDEO_EDITOR }"
-            description: "<@&${ ROLES.STAFF.FEIYUN_FILM_VIDEO_EDITOR }>: Role for Video Editor"
-
-          "⌨️":
-            role: "${ ROLES.STAFF.FEIYUN_FILM_SCRIPT_WRITER }"
-            description: "<@&${ ROLES.STAFF.FEIYUN_FILM_SCRIPT_WRITER }>: Role for Script Writer"
-
-          "🔭":
-            role: "${ ROLES.STAFF.FEIYUN_FILM_CONTENT_QC }"
-            description: "<@&${ ROLES.STAFF.FEIYUN_FILM_CONTENT_QC }>: Role for Content QC"
-
-          "🔍":
-            role: "${ ROLES.STAFF.FEIYUN_FILM_VIDEO_QC }"
-            description: "<@&${ ROLES.STAFF.FEIYUN_FILM_VIDEO_QC }>: Role for Video QC"
-
-          "🔬":
-            role: "${ ROLES.STAFF.FEIYUN_FILM_GRAMMAR_QC }"
-            description: "<@&${ ROLES.STAFF.FEIYUN_FILM_GRAMMAR_QC }>: Role for Grammar QC"
-
-          "📷":
-            role: "${ ROLES.STAFF.FEIYUN_FILM_RECORDER }"
-            description: "<@&${ ROLES.STAFF.FEIYUN_FILM_RECORDER }>: Role for Recorder"
-
-          "🎙️":
-            role: "${ ROLES.STAFF.FEIYUN_FILM_VOICEOVER }"
-            description: "<@&${ ROLES.STAFF.FEIYUN_FILM_VOICEOVER }>: Role for Voiceover"          
-
-            
-      # Directory Reacts
-      reactrolesnotification:
-        image: "https://cdn.discordapp.com/attachments/954233449953234964/958172135996686356/kqm_notification_roles.png"
-        title: "・                                       Notifications                                      ・"
-        color: ${ COLORS.ELECTRO_PURPLE }
-        description: |-
-          React with the matching emoji for the pings you are interested in.
-        permissions:
-          whitelist:
-            - "${ ROLES.VERIFIED }"
-
-        reactions:
-          "madamePING:776287232579207198":
-            role: "${ ROLES.ALERT_ANNOUNCEMENTS }"
-            description: "Important server announcements"
-
-          "🏟️":
-            role: "${ ROLES.ALERT_TRUSTED_CREATORS }"
-            description: "Trusted Creators release content"
-
-          "twitch:956835761745956876":
-            role: "${ ROLES.ALERT_TWITCH }"
-            description: "KQM Twitch goes live\n"
-
-          "primogem:768816635120713769":
-            role: "${ ROLES.ALERT_CODES }"
-            description: "Primogem redeem codes are released."
-
-          "🎟️":
-            role: "${ ROLES.ALERT_GIVEAWAYS }"
-            description: "Giveaways (skins, Welkins, BPs, and more!)."
-            
-          "KeqParty:805672780606734347":
-            role: ${ ROLES.EVENTS_KITTEN }
-            description: "Server events, including karaoke, game nights & more!"
-
-          "yaetcg:1066298575463649290":
-            role: "${ ROLES.ALERT_TCG }"
-            description: "GI TCG Events & Announcements"
-
-          "webevents:1035763039644942386":
-            role: "${ ROLES.ALERT_WEB_EVENTS }"
-            description: "A new Genshin Web Event is released.\n**・   Daily Alerts   ・**\nReact below for daily game alerts.\n"
-
-          "🟥":
-            role: "${ ROLES.ALERT_DAILY_ASIA }"
-            description: "Dailies Alert - Asia and SAR Servers"
-
-          "🟦":
-            role: "${ ROLES.ALERT_DAILY_AMERICA }"
-            description: "Dailies Alert - America Server"
-
-          "🟫":
-            role: "${ ROLES.ALERT_DAILY_EUROPE }"
-            description: "Dailies Alert - Europe Server"
-
-      reactrolesregions:
-        image: "https://cdn.discordapp.com/attachments/954233449953234964/958172136613240892/kqm_region_roles.png"
-        title: "・                                       Coop Roles                                      ・"
-        color: ${ COLORS.ELECTRO_PURPLE }
-        description: |-
-          React here to show others in coop-chat your server. React to LFG if you would like to access the global Katheryne Coop Bot.
-        permissions:
-          whitelist:
-            - "${ ROLES.VERIFIED }"
-
-        reactions:
-          "🟩":
-            role: "${ ROLES.LFG }"
-            description: "LFG - Access to #coop-chat\n"
-
-          "🟥":
-            role: "${ ROLES.REGION_ASIA }"
-            description: "Asia Server"
-
-          "🟦":
-            role: "${ ROLES.REGION_AMERICA }"
-            description: "America Server"
-
-          "🟫":
-            role: "${ ROLES.REGION_EUROPE }"
-            description: "Europe Server"
-
-          "🟨":
-            role: "${ ROLES.REGION_TWHKMO }"
-            description: "TW/HK/MO Server"
-
-      reactrolescategory:
-        image: "https://cdn.discordapp.com/attachments/954233449953234964/958172135791149076/kqm_category_roles.png"
-        title: "・                                       Categories                                      ・"
-        color: ${ COLORS.ELECTRO_PURPLE }
-        description: |-
-          React here to unlock the respective channels in the server.
-        permissions:
-          whitelist:
-            - "${ ROLES.VERIFIED }"
-
-        reactions:
-          "🖼️":
-            role: "${ ROLES.MEDIA }"
-            description: "Media *(Visible by default)*"
-
-          "🟣":
-            role: "${ ROLES.LEWD }"
-            description: "Lewd (18+ only)\n\n➜ For access to the theorycrafting category, react in <#939411507127668758>."
-
-      reactrolespronoun:
-        image: "https://cdn.discordapp.com/attachments/954233449953234964/958172136365752380/kqm_pronoun_roles.png"
-        title: "・                                       Pronouns                                      ・"
-        color: ${ COLORS.ELECTRO_PURPLE }
-        permissions:
-          whitelist:
-            - "${ ROLES.VERIFIED }"
-
-        reactions:
-          "🟦":
-            role: "${ ROLES.PRONOUN_M }"
-            description: "He/Him"
-
-          "🟥":
-            role: "${ ROLES.PRONOUN_F }"
-            description: "She/Her"
-
-          "🟪":
-            role: "${ ROLES.PRONOUN_T }"
-            description: "They/Them"
-
-          "🟩":
-            role: "${ ROLES.PRONOUN_ASK }"
-            description: "Ask for Pronouns"
-
-      # Events Ping
-      reactroleevents:
-        title: "React for Events!"
-        color: ${ COLORS.ELECTRO_PURPLE }
-
-        reactions:
-          "KeqParty:805672780606734347":
-            role: ${ ROLES.EVENTS_KITTEN }
-            description: "<@&${ ROLES.EVENTS_KITTEN }>: React here if you want to be notified about future events, including karaoke, game nights & more!"
-
-      # NSFW Staff channel
-      reactrolestaffnsfw:
-        title: "Staff NSFW Channel Access 18+ Only"
-        color: ${ COLORS.ELECTRO_PURPLE }
-
-        reactions:
-          "kikin:959474754971127819":
-            role: ${ ROLES.STAFF.STAFF_LEWD }
-            description: "<@&${ ROLES.STAFF.STAFF_LEWD }>"
-        
-      #staff:
-      #  image: "https://cdn.discordapp.com/attachments/945321873418362880/953178188639531078/unknown.png"
-      #  title: "Emergency Staff Allocation"
-      #  description: |-
-      #    This command should only be able to be used by staff. Please gather roles that you think you were missing. Abuse of this command will be punished.
-      #  # Literally ALL staff roles
-      #  permissions:
-      #    whitelist:
-      #      - "${ ROLES.STAFF }"
-      #      - "${ ROLES.PILLAR_STAFF }"
-      #
-      #  reactions:
-      #    # REACTION EMOJI ID: ROLE
-      #    "kapetayo:904967085170491412":
-      #      role: "${ ROLES.PILLAR_STAFF }"
-      #      description: "Pillar Staff"
-
+      #   reactions:
+      #     "love:767201369525321758":
+      #       role: "${ ROLES.ADMIN.KEQINGS_KEY }"
+      #       description: ":key: Break glass in case of emergency."
             
   modMail:
-    enabled: true
+    enabled: false
 
     # This restricts who can open a thread. If this is not set, anyone can open a thread by DMing the bot
     #permissions:
@@ -487,7 +150,7 @@ modules:
 
   # Role kits
   roleKits:
-    enabled: true
+    enabled: false
 
     # This restricts who can use the /rolekits command. if its not set, anyone with the MANAGE_ROLES permission can use the command.
     permissions: 
@@ -594,7 +257,7 @@ modules:
 
   # Verification Module
   verification:
-    enabled: true
+    enabled: false
 
     # This restricts who can use the /verification command. if its not set, anyone can use the command.
     permissions:
@@ -624,7 +287,7 @@ modules:
       type: "PRIMARY"
 
   supportThreads:
-    enabled: true
+    enabled: false
 
     # This restricts who can use the /supportthreads command. if its not set, anyone with MANAGE_THREADS permission can use the command.
     permissions:

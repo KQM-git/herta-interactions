@@ -1,3 +1,0 @@
-match: ${ TRIGGER_PREFIX }(?:stone)(?:\s|$)
-interaction: 
-  content: https://tenor.com/view/vacuum-chase-run-scared-gif-3985014

@@ -1,4 +1,0 @@
-interaction: miscellaneous/good
-description: "Is this good?"
-
-match: ${ TRIGGER_PREFIX }([gG]ood)(?:\s|$)
