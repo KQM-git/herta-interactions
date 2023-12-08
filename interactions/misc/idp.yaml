@@ -1,19 +1,7 @@
 content: >
   ${
     randomFromList([
-      "Depends on character
-      Depends on weapon
-      Depends on move
-      Depends on target
-      Depends on moon phase
-      Depends on your astrological star sign
-
-      **It Depends**™️",
-      "Depends on the bun
-      Depends on the sauce
-      Depends on the sides
-      Depends on the burger chain
-
-      **It Depends**™️"
+      "Depends on character\nDepends on light cone\nDepends on move\nDepends on target\nDepends on moon phase\nDepends on your astrological star sign\n\n**It Depends**™️",
+      "Depends on the bun\nDepends on the sauce\nDepends on the sides\nDepends on the burger chain\n\n**It Depends**™️"
     ])
   }
