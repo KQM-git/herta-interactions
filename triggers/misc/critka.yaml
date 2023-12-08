@@ -1,0 +1,3 @@
+interaction: misc/critka
+match: ${ TRIGGER_PREFIX }critka(?:\s|$)
+ignoreCase: true
