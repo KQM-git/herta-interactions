@@ -68,7 +68,7 @@ modules:
         
     loggingChannel: "${ CHANNELS.BOT_LOGGING }"
     
-   vanityRoles:
+  vanityRoles:
     enabled: false
 
     # Who can use the /vanityrole command, anyone with MANAGE_ROLES if not set.
