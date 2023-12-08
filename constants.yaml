@@ -1,6 +1,6 @@
 # Define reusable constants here that are used in interactions
 
-TRIGGER_PREFIX: ^h!
+TRIGGER_PREFIX: ^h.
 
 ROLES:
   ADMIN:
