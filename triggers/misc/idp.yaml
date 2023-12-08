@@ -1,0 +1,3 @@
+interaction: misc/idp
+match: ${ TRIGGER_PREFIX }(?:idp|depends)(?:\s|$)
+ignoreCase: true

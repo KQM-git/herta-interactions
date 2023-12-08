@@ -1,0 +1,19 @@
+content: >
+  ${
+    randomFromList([
+      "Depends on character
+      Depends on weapon
+      Depends on move
+      Depends on target
+      Depends on moon phase
+      Depends on your astrological star sign
+
+      **It Depends**™️",
+      "Depends on the bun
+      Depends on the sauce
+      Depends on the sides
+      Depends on the burger chain
+
+      **It Depends**™️"
+    ])
+  }
