@@ -69,18 +69,18 @@ modules:
     loggingChannel: "${ CHANNELS.BOT_LOGGING }"
     
   vanityRoles:
-    enabled: false
+    enabled: true
 
     # Who can use the /vanityrole command, anyone with MANAGE_ROLES if not set.
     permissions:
       whitelist:
-        - "${ ROLES.PATREON_ARCHON }"
-        - "${ ROLES.PATREON_ADEPTUS }"
+        - "${ ROLES.PATREON_TIER_4 }"
+        - "${ ROLES.PATREON_TIER_3 }"
 
     # Log whenever someone's custom role is updated
     loggingChannel: "${ CHANNELS.BOT_LOGGING }"
 
-    createRoleAfter: "${ ROLES.PATREON_ADEPTUS }"
+    createRoleAfter: "${ ROLES.VANITY_ROLE_MARKER }"
 
   reactRoles:
     enabled: false
