@@ -162,7 +162,7 @@ modules:
         exportAsCommand: true
         name: Get Pom-Pom'd
         permissions: 
-          whitelist: ${ [ ...getValuesRecursive(ROLES.ADMIN), TEAM_LEAD, MOD_LEAD, MOD ] }
+          whitelist: ${ [ ...getValuesRecursive(ROLES.ADMIN), ROLES.TEAM_LEAD, ROLES.MOD_LEAD, ROLES.MOD ] }
         addRoles:
           - "1190557761327607848"
 
