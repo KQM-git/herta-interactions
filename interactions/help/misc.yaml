@@ -1,24 +1,12 @@
 embeds:
-  - title: Keqing Help - Misc Commands
+  - title: Herta Help - Other Commands
     color: ${ COLORS.KQM_PURPLE }
     thumbnail:
       url: ${ IMAGES.KQM_LOGO }
     description: |-
-      __**Links to Other Servers/Websites**__
-      `k!dg`: Data Gathering Server
-      `k!map`: Teyvat Interactive Map
-      `k!shinshin` / `k!enka`: Enka Network
-      `k!wfp`: Wangsheng Funeral Parlor
-
-      __**KQM Links**__
-      `k!links`
-      `k!partners`
-      `k!patreon`
-
-      __**Other Helpful Commands**__
-      `k!libsubs`
-      `k!team`
-      `k!wait`
+      `website`
+      `yt`
+      `skillissue`
       
 buttons:
   - customId: "liveInteraction#help/tcl"

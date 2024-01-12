@@ -1,0 +1,3 @@
+interaction: misc/skillissue
+match: ${ TRIGGER_PREFIX }skill ?issue(?:\s|$)
+ignoreCase: true

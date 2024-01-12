@@ -1,1 +1,1 @@
-# kqm-bot-interactions
+# Herta Bot Interactions

@@ -1,4 +1,5 @@
-match: ${ TRIGGER_PREFIX }[wW]ebsite(?:\s|$)
+match: ${ TRIGGER_PREFIX }((web)?site|kqm)(?:\s|$)
+ignoreCase: true
 interaction:
   embeds:
     - title: KQM Website
@@ -6,10 +7,10 @@ interaction:
       thumbnail:
         url: ${ IMAGES.KQM_LOGO } 
       description: |- 
-        The home for Genshin Theorycrafting & Character Guides!
+        The home for Honkai: Star Rail Theorycrafting & Character Guides!
         
   buttons:
     - label: "KQM"
-      url: "https://keqingmains.com/"
+      url: "https://hsr.kqm.gg/"
       emoji: ${ EMOJIS.LOGO }
       style: "LINK"

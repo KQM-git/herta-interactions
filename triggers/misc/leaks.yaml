@@ -1,0 +1,3 @@
+interaction: misc/leaks
+match: ${ TRIGGER_PREFIX }(?:leaks|rule ?7)(?:\s|$)
+ignoreCase: true

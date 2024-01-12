@@ -1,6 +1,7 @@
 # Define reusable constants here that are used in interactions
 
 TRIGGER_PREFIX: ^h.
+HERTA_ID: "1120430526856175816"
 
 ROLES:
   ADMIN:
