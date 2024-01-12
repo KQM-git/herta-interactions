@@ -4,17 +4,19 @@ embeds:
     thumbnail:
       url: ${ IMAGES.KQM_LOGO }
     description: |-
-      `website`
-      `yt`
-      `skillissue`
+      ### Links
+      `enka`, `kqm`, `website`, `yt`
+      
+      ## Memes
+      `critka`, `depends`, `rule7`, `skillissue`
       
 buttons:
-  - customId: "liveInteraction#help/tcl"
-    label: Back - TCL Commands
+  - customId: "liveInteraction#help/_main"
+    label: Back - Character Commands
     style: "PRIMARY"
     emoji: "◀️"
 
-  - customId: "liveInteraction#help/fun"
-    label: Next - Fun Commands
-    style: "PRIMARY"
-    emoji: "▶️"
+  # - customId: "liveInteraction#help/fun"
+  #   label: Next - Fun Commands
+  #   style: "PRIMARY"
+  #   emoji: "▶️"
