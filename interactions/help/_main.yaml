@@ -13,7 +13,6 @@ embeds:
 
       For discord feedback, please use <#${ CHANNELS.MODMAIL_THREADS }>.
       For website feedback, use <#${ CHANNELS.WEBSITE_FEEDBACK }>.
-      For feedback regarding the bot, use <#${ CHANNELS.BOT_FEEDBACK }>.
       ### Character Commands
       `h.characters`: Display all of KQM's character resources.
 
