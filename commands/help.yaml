@@ -1,2 +1,4 @@
 interaction: "help/_main"
+description: KQM Bot Help
 name: HELP
+ephemeral: "true"

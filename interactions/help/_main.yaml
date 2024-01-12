@@ -24,14 +24,13 @@ embeds:
 # button order:
 # characters (_main) > faq > tools > tcl > misc > fun
 
-# buttons:
-#   - customId: "liveInteraction#help/fun"
-#     label: Back - Fun Commands
-#     style: "PRIMARY"
-#     emoji: "◀️"
-
+buttons:
   - customId: "liveInteraction#help/misc"
     label: Other COmmands
     style: "PRIMARY"
     emoji: "▶️"
 
+#   - customId: "liveInteraction#help/fun"
+#     label: Back - Fun Commands
+#     style: "PRIMARY"
+#     emoji: "◀️"
