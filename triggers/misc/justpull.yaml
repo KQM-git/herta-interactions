@@ -1,0 +1,3 @@
+interaction: misc/justpull
+match: ${ TRIGGER_PREFIX }just ?pull(?:\s|$)
+ignoreCase: true
